@@ -37,7 +37,7 @@ def reportTrades ( file ) :
 
     header = '<!doctyle html><html><head><title>Cboe Assesment</title></head><body>'
     body = '<table border="1"><caption><b>Cboe Top 10 Trades</b></caption></h1><thead><tr><th>SYMBOL</th><th>AMOUNT</th></tr>'
-    test = '</table><p>'
+    closeTable = '</table><p>'
     footer = '<p><caption>Created by João Vitor Skonienczwy</body><p></html>'
     with open('results.html' , 'w') as output :
         output.write (header)
@@ -76,7 +76,7 @@ def reportTrades ( file ) :
                     addOrder+=1
                 else :
                     orderExecuted+=1
-        output.write (test)
+        output.write (closeTable)
         output.write ('<b> Summary: <p></b>')
         output.write (f'<b>Cancelled Trades: {cancelled}<p> </b>')
         output.write (f'<b>Trade Messages: {tradeMessage}<p> </b>')
